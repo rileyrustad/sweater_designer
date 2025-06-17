@@ -140,17 +140,26 @@ document.getElementById('measurementForm').addEventListener('submit', function(e
                     return;
                 }
                 console.log("Clicked color:", selectedColor.value);
-            
-                // Change the fill of the clicked rectangle
-                d3.select(this).attr("fill", selectedColor.value);
 
+                // Change the fill of the clicked rectangle
                 const rect = d3.select(this);
+                rect.attr("fill", selectedColor.value);
+
                 const row = rect.attr("data-row");
                 const col = rect.attr("data-col");
                 console.log("row:", row);
                 console.log("col:", col);
 
                 sweater.stitchGrid[row][col] = selectedColor.value;
+
+                // After selecting a color, return the rectangle to its normal size
+                rect.transition()
+                    .duration(200)
+                    .attr("x", xScale(sweater.stitchGrid[row][col]['position'][0] - 1 / (2 * columnsPerInch)))
+                    .attr("y", yScale(sweater.stitchGrid[row][col]['position'][1] + 1 / (2 * columnsPerInch)))
+                    .attr("width", oneInch / columnsPerInch)
+                    .attr("height", oneInch / rowsPerInch)
+                    .attr("stroke", "black");
 
             });
           }
