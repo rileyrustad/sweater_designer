@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measurement Visualization</title>
+    <script src="d3.js"></script> <!-- Ensure this is your local D3.js script -->
+</head>
+<body>
+    <form id="measurementForm">
+        <label for="rowsPerInch">Rows per inch:</label>
+        <input type="number" id="rowsPerInch" name="rowsPerInch" value="6.5" step="0.01" required><br>
+        
+        <label for="columnsPerInch">Columns per inch:</label>
+        <input type="number" id="columnsPerInch" name="columnsPerInch" value="4.75" step="0.01" required><br>
+        
+        <label for="waist">Waist (inches):</label>
+        <input type="number" id="waist" name="waist" value="19.5" step="0.01" required><br>
+        
+        <label for="chest">Chest (inches):</label>
+        <input type="number" id="chest" name="chest" value="22.5" step="0.01" required><br>
+        
+        <label for="shoulder">Shoulder (inches):</label>
+        <input type="number" id="shoulder" name="shoulder" value="20" step="0.01" required><br>
+        
+        <label for="neck">Neck (inches):</label>
+        <input type="number" id="neck" name="neck" value="7.5" step="0.01" required><br>
+        
+        <label for="collar">Collar (inches):</label>
+        <input type="number" id="collar" name="collar" value="3" step="0.01" required><br>
+
+        <label for="garmentLength">garment length (inches):</label>
+        <input type="number" id="garmentLength" name="garmentLength" value="26" step="0.01" required><br>
+ 
+        <label for="hemHeight">Hem Height (inches):</label>
+        <input type="number" id="hemHeight" name="hemHeight" value="2.5" step="0.01" required><br>
+       
+        <label for="toPit">To Pit (inches):</label>
+        <input type="number" id="toPit" name="toPit" value="16.5" step="0.01" required><br>
+
+        <label for="drop">Drop (inches):</label>
+        <input type="number" id="drop" name="drop" value="2" step="0.01" required><br>
+
+        <label for="sleeveLen">Sleeve Length: (inches):</label>
+        <input type="number" id="sleeveLen" name="sleeveLen" value="24.5" step="0.01" required><br>
+
+        <label for="cuffWidth">Cuff Width: (inches):</label>
+        <input type="number" id="cuffWidth" name="cuffWidth" value="4" step="0.01" required><br>
+    
+        <label for="cuffHem">Cuff Hem: (inches):</label>
+        <input type="number" id="cuffHem" name="cuffHem" value="2.5" step="0.01" required><br>
+    
+        <fieldset>
+            <legend>Choose a Color:</legend>
+            <input type="radio" id="color1" name="color" value="blue" checked required>
+            <label for="color1">Color 1</label><br>
+            <input type="radio" id="color2" name="color" value="yellow">
+            <label for="color2">Color 2</label><br>
+            <input type="radio" id="color3" name="color" value="green">
+            <label for="color3">Color 3</label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+    <svg width="1000" height="1000"></svg>
+    <script src="script.js"></script>
+</body>
+</html>
